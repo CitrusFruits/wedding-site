@@ -1,0 +1,32 @@
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
+{{ $styles := resources.Get "css/main.css" | postCSS }}
+
+{{ if .Site.IsServer }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
+{{ else }}
+{{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" />
+{{ end }}
+
+<div class="flex justify-between items-center px-4 text-xl" style="font-family: 'Shadows Into Light', cursive;">
+	<a><img class="flex-0" src="http://placehold.it/50"></a>
+	<nav class="flex-0">
+		<ul class="flex space-x-2">
+			<a href="/">
+				<li>Home</li>
+			</a>
+			<a target="_blank"
+				href="https://registry.theknot.com/andrew-duensing-julianna-foster-july-2022-ca/49588452">
+				<li>Registry
+				</li>
+			</a>
+			<li><a>RSVP</a></li>
+		</ul>
+	</nav>
+</div>
