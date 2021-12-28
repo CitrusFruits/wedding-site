@@ -7,12 +7,7 @@
 
 {{ $styles := resources.Get "css/main.css" | postCSS }}
 
-{{ if .Site.IsServer }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
-{{ else }}
-{{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
-<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" />
-{{ end }}
 
 <div class="flex justify-between items-center px-4 text-xl" style="font-family: 'Shadows Into Light', cursive;">
 	<a><img class="flex-0" src="http://placehold.it/50"></a>
