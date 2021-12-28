@@ -7,7 +7,7 @@
 			<!---->
 		</div>
 		<section class="bg-cover w-full bg-center"
-			style="height: 720px; background-image: url(/img/photo_shoot_0.webp)">
+			style="height: 720px; background-image: url(/img/save_the_date.webp); background-position: top">
 			<div class="flex justify-bottom items-end w-full h-full bg-black bg-opacity-30 py-10">
 				<div class="text-white text-2xl w-full max-w-7xl mx-auto p-8">
 					<h1 class="text-5xl mb-4">Julianna and Andrew are getting married!</h1>
@@ -32,9 +32,60 @@
 				<div class="flex-1 bg-cover" style="height: 400px; background-image:url(/img/venue_0.jpg)">
 				</div>
 		</section>
+		<section class="flex flex-col gap-4 p-8 max-w-7xl mx-auto" style="">
+			<p id="countdown" class="text-3xl text-center">Only _ days _ hours _ minutes and _ seconds until the fun
+				begins!
+		</section>
 		<div data-v-36aa22be="" class=" sentry">
 		</div>
 		<!---->
 	</div>
 </body>
+<script>
+	const countdownEl = document.getElementById("countdown");
+	const MINUTE_IN_MS = 1000 * 60;
+	const HOUR_IN_MS = 60 * MINUTE_IN_MS;
+	const DAY_IN_MS = 24 * HOUR_IN_MS;
+	const eventStartTime = 1659128700000;
+	const eventEndTime = 1659157200000;
+	const genCountdownString = () => {
+		let currentTime = new Date().getTime();
+		let countdownStr = "";
+		if (eventEndTime < currentTime) {
+			countdownStr = "The wedding may be over, but the fun has just begun!"
+		} else if (eventStartTime < currentTime) {
+			countdownStr = "THE WEDDING IS HAPPENING NOOOOOOW!!"
+		} else {
+			const delta = eventStartTime - currentTime;
+			const days = Math.floor(delta / (DAY_IN_MS))
+			const hours = Math.floor((delta - (days * DAY_IN_MS)) / HOUR_IN_MS)
+			const minutes = Math.floor((delta - (days * DAY_IN_MS + hours * HOUR_IN_MS)) / MINUTE_IN_MS)
+			const seconds = Math.floor((delta - (days * DAY_IN_MS + hours * HOUR_IN_MS + minutes * MINUTE_IN_MS)) / 1000)
+			const timeSection = (amount, unit, preferComma = true) => {
+				if (amount === 0) return false;
+				if (amount !== 1) {
+					unit += "s"
+				}
+				return `${amount} ${unit}`
+			}
+			let timeString = [
+				timeSection(days, "day"),
+				timeSection(hours, "hour"),
+				timeSection(minutes, "minute"),
+				timeSection(seconds, "second"),
+			].filter(Boolean).join(", ");
+			timeString = Array.from(timeString)
+			const numCommas = timeString.filter(char => char === ",").length;
+			if (numCommas >= 1) {
+				timeString.splice(timeString.lastIndexOf(","), 1, `${numCommas > 1 ? "," : ""} and`);
+			}
+			timeString = timeString.join("");
+			countdownStr = `Only ${timeString} until the wedding!`
+		}
+		countdownEl.textContent = countdownStr;
+	}
+	genCountdownString();
+	setInterval(genCountdownString, 1000);
+
+</script>
 {{ end }}
