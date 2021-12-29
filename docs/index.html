@@ -54,7 +54,7 @@
 			<div class="flex justify-bottom items-end w-full h-full bg-black bg-opacity-30 py-10">
 				<div class="text-white text-2xl w-full max-w-7xl mx-auto p-8">
 					<h1 class="text-5xl mb-4">Julianna and Andrew are getting married!</h1>
-					<p>July 8, 2023</p>
+					<p>July 29, 2022</p>
 					<p class="mb-4">Hacienda de las Flores, Moraga, CA</p>
 					<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">RSVP</button>
 				</div>
@@ -63,17 +63,33 @@
 
 		<section class="flex flex-col gap-4 p-8 max-w-7xl mx-auto" style="">
 			<h2 class="text-5xl text-center">Location</h2>
-			<a target="_blank"
-				href="https://www.google.com/maps/place/Hacienda+De+Las+Flores+by+Wedgewood+Weddings/@37.851383,-122.127317,13z/data=!4m9!1m2!2m1!1sHacienda+de+las+flores;t%3Dm!3m5!1s0x808f89d283a097c7:0x3074d1131c0a1185!8m2!3d37.8521825!4d-122.126913!15sChpIYWNpZW5kYSBkZSBsYXMgZmxvcmVzO3Q9bVocIhpoYWNpZW5kYSBkZSBsYXMgZmxvcmVzIHQgbZIBDXdlZGRpbmdfdmVudWU?hl=en-US">
-				<p class="text-2xl">Hacienda de las Flores</p>
-				<p class="text-xl">2100 Donald Dr, Moraga, CA 94556</p>
-			</a>
+			<p>Ceremony & reception will both be at Hacienda de las Flores. Ceremony begins at 5pm.</p>
+			<div class="flex">
+				<a target="_blank"
+					href="https://www.google.com/maps/place/Hacienda+De+Las+Flores+by+Wedgewood+Weddings/@37.851383,-122.127317,13z/data=!4m9!1m2!2m1!1sHacienda+de+las+flores;t%3Dm!3m5!1s0x808f89d283a097c7:0x3074d1131c0a1185!8m2!3d37.8521825!4d-122.126913!15sChpIYWNpZW5kYSBkZSBsYXMgZmxvcmVzO3Q9bVocIhpoYWNpZW5kYSBkZSBsYXMgZmxvcmVzIHQgbZIBDXdlZGRpbmdfdmVudWU?hl=en-US">
+					<p class="text-2xl">Hacienda de las Flores</p>
+					<p class="text-xl">2100 Donald Dr, Moraga, CA 94556</p>
+				</a>
+			</div>
+
 			<div class="flex gap-8">
 				<iframe class="flex-1"
 					src="https://maps.google.com/maps?q=Hacienda%20de%20las%20flores;t=m&amp;z=13&amp;ie=UTF8&amp;output=embed"
 					width="100%" height="400px"></iframe>
 				<div class="flex-1 bg-cover" style="height: 400px; background-image:url(/img/venue_0.jpg)">
 				</div>
+			</div>
+			<div class="bg-yellow-100 p-4 border-2 rounded-md border-yellow-200">
+				<p>⚠️ TODO: Parking will be limited. There are 70 spots and roughly 120 different parties. We'll need to
+					arrange some sort of guide for carpooling, shuttling,
+					or ubering.</p>
+			</div>
+		</section>
+		<section class="flex flex-col gap-4 p-8 max-w-7xl mx-auto" style="">
+			<h2 class="text-5xl text-center">Lodging</h2>
+			<div class="bg-yellow-100 p-4 border-2 rounded-md border-yellow-200">
+				<p>⚠️ TODO: figure out if we need to get a hotel deal.</p>
+			</div>
 		</section>
 		<section class="flex flex-col gap-4 p-8 max-w-7xl mx-auto" style="">
 			<p id="countdown" class="text-3xl text-center">Only _ days _ hours _ minutes and _ seconds until the fun
@@ -123,7 +139,7 @@
 				timeString.splice(timeString.lastIndexOf(","), 1, `${numCommas > 1 ? "," : ""} and`);
 			}
 			timeString = timeString.join("");
-			countdownStr = `Only ${timeString} until the wedding!`
+			countdownStr = `🎉 Only ${timeString} until the wedding! 🎉`
 		}
 		countdownEl.textContent = countdownStr;
 	}
@@ -133,10 +149,19 @@
 </script>
 
 	<footer class="bg-gray-900">
-	<div class="flex flex-col gap-2 p-8 max-w-7xl mx-auto text-white" style="overflow-wrap: anywhere">
-		<p>Questions? Feel free to reach out!</p>
-		<p><a href="tel:9259845976">📱 (925) 984-5976</a></p>
-		<p><a href="mailto:fosterduensingwedding@gmail.com">📧 fosterduensingwedding@gmail.com</a></p>
+	<div class="flex  gap-4 p-8 max-w-7xl mx-auto">
+		<div class="flex-1 flex flex-col gap-2 p-8 max-w-7xl mx-auto text-white" style="overflow-wrap: anywhere">
+			<p>Questions? Feel free to reach out!</p>
+			<p><a href="tel:9259845976">📱 (925) 984-5976</a></p>
+			<p><a href="mailto:fosterduensingwedding@gmail.com">📧 fosterduensingwedding@gmail.com</a></p>
+		</div>
+		<div class="flex-1 flex flex-col gap-2 p-8 max-w-7xl mx-auto text-white" style="overflow-wrap: anywhere">
+			<p><a target="_blank"
+					href="https://registry.theknot.com/andrew-duensing-julianna-foster-july-2022-ca/49588452">Registry</a>
+			</p>
+			<p><a href="#">RSVP</a></p>
+		</div>
+	</div>
 </footer>
 </body>
 
