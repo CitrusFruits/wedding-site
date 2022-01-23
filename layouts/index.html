@@ -1,25 +1,31 @@
 {{ define "main" }}
 
 <body>
-	<div id="app" style="font-family: 'Mali', cursive;">
+	<div id="app" class="jost">
 		<div>
 			<!---->
 			<!---->
 		</div>
-		<section class="bg-cover w-full bg-center"
-			style="height: 720px; background-image: url(/img/save_the_date.webp); background-position: top">
-			<div class="flex justify-bottom items-end w-full h-full bg-black bg-opacity-30 py-10">
-				<div class="text-white text-2xl w-full max-w-7xl mx-auto p-8">
-					<h1 class="text-5xl mb-4">Julianna and Andrew are getting married!</h1>
-					<p>July 29, 2022</p>
-					<p class="mb-4">Hacienda de las Flores, Moraga, CA</p>
-					<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">RSVP</button>
-				</div>
-			</div>
+		<section>
+			<h1 class="text-8xl leading-snug my-16 mx-auto text-center brittany text-li">
+				julianna
+				<br>
+				&
+				<br>
+				andrew
+			</h1>
 		</section>
+		{{ partial "nav.html" }}
+		<section class="bg-cover w-full bg-center max-w-7xl mx-auto"
+			style="height: 720px; background-image: url(/img/engagement_photo.webp); background-position: top"
+			alt="Andrew and Julianna standing together on a grassy hill shaded by oak trees.">
+		</section>
+		<div class="text-center brittany text-7xl my-16">please join us</div>
+		<div class="text-center jost text-4xl my-6">for our wedding celebration</div>
+		<div class="text-center jost text-7xl font-medium mt-14 mb-16">JULY 29, 2022</div>
 
-		<section class="flex flex-col gap-4 p-8 max-w-7xl mx-auto" style="">
-			<h2 class="text-5xl text-center">Location</h2>
+		<section class="flex flex-col gap-4 p-8 max-w-6xl mx-auto" style="">
+			<h2 class="brittany text-7xl text-center">venue</h2>
 			<p>Ceremony & reception will both be at Hacienda de las Flores. Ceremony begins at 5pm.</p>
 			<div class="flex">
 				<a target="_blank"
@@ -43,7 +49,7 @@
 			</div>
 		</section>
 		<section class="flex flex-col gap-4 p-8 max-w-7xl mx-auto" style="">
-			<h2 class="text-5xl text-center">Lodging</h2>
+			<h2 class="brittany text-7xl text-center mb-8">lodging</h2>
 			<div class="bg-yellow-100 p-4 border-2 rounded-md border-yellow-200">
 				<p>⚠️ TODO: figure out if we need to get a hotel deal.</p>
 			</div>

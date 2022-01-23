@@ -11,25 +11,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Mali:wght@600&display=swap"
 	rel="stylesheet">
+<!-- <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet"> -->
+
+<link rel="stylesheet" href="/fonts/brittany.css" type="text/css" charset="utf-8" />
+<link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8" />
 
 {{ $styles := resources.Get "css/main.css" | postCSS }}
 
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
-
-<!-- <div class="flex justify-between items-center px-4 text-xl" style="font-family: 'Shadows Into Light', cursive;"> -->
-<div class="flex justify-between items-center px-4 text-xl" style="font-family: 'Mali', cursive;">
-	<a><img class="flex-0" width="100px" src="/img/temp_logo.png"></a>
-	<nav class="flex-0 text-xl md:text-2xl max-w-full overflow-auto ">
-		<ul class="flex space-x-2 gap-2">
-			<a href="/">
-				<li>Home</li>
-			</a>
-			<a target="_blank"
-				href="https://registry.theknot.com/andrew-duensing-julianna-foster-july-2022-ca/49588452">
-				<li>Registry
-				</li>
-			</a>
-			<li><a>RSVP</a></li>
-		</ul>
-	</nav>
-</div>
