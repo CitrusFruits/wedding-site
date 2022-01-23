@@ -1,0 +1,10 @@
+@font-face {
+	font-family: "Britanny";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(/fonts/brittany_signature.ttf);
+}
+.brittany {
+	font-family: "Britanny", sans-serif;
+}
